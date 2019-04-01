@@ -33,8 +33,8 @@ Valor: 275000
 ///////////////////////////////////////////LISTAR LOS CURSOS//////////////////////////////////////////////////////////////
 const listar = ()=>{
 	try{
-	listaCursos= require('../listado.json');//dos formas de llamar
-	//listaEstudiantes= JSON.parse(fs.readFileSync(listado.json));// de manera asincronica es mejor utilizar este
+	//listaCursos= require('../listado.json');//dos formas de llamar
+	listaCursos= JSON.parse(fs.readFileSync('listado.json'));// de manera asincronica es mejor utilizar este
 	}catch(error){
 		listaCursos=[];
 	}
@@ -44,8 +44,8 @@ const listar = ()=>{
 ///////////////////////////////////////////LISTAR LOS ASPIRANTES//////////////////////////////////////////////////////////////
 const listarAsp=()=>{
 	try{
-	listaAspirantes= require('../listado2.json');//dos formas de llamar
-	//listaEstudiantes= JSON.parse(fs.readFileSync(listado.json));// de manera asincronica es mejor utilizar este
+	//listaAspirantes= require('../listado2.json');//dos formas de llamar
+	listaAspirantes= JSON.parse(fs.readFileSync('listado2.json'));// de manera asincronica es mejor utilizar este
 	}catch(error){
 		listaAspirantes=[];
 	}
