@@ -3,6 +3,7 @@ const fs = require ('fs');
 listaCursos = [];
 listaAspirantes= [];
 listaMatriculas= [];
+listaMatriculass= [];
 let cursos =[ {
 Id: 101,
 Nombre: 'Fundamentos de programacion en java',
@@ -114,6 +115,14 @@ const guardarAsp = ()=> {
 ///////////////////////////////////////////GUARDAR LAS MATRICULAS//////////////////////////////////////////////////////////////
 const guardarMat = ()=> {
 		let datos = JSON.stringify(listaMatriculas);
+		fs.writeFile('listado3.json',datos,(err)=>{
+			if(err) throw(err);
+			console.log('Archivo creado con exito')
+		})
+}
+
+const guardarMatt = ()=> {
+		let datos = JSON.stringify(listaMatriculass);
 		fs.writeFile('listado3.json',datos,(err)=>{
 			if(err) throw(err);
 			console.log('Archivo creado con exito')
@@ -716,7 +725,7 @@ listarMatt()
 let sw=false;
 let sww=false;
 let mensaje;
-let listaMatriculass= [];
+
 	listaMatriculas.forEach(mat=>{
 		if(mat.identificador==identificador && mat.documento==documento){
 			sw=true;
@@ -740,7 +749,7 @@ let listaMatriculass= [];
 		listaMatriculas=listaMatriculass
 		console.log('despues de')
 		console.log(listaMatriculas)
-		guardarMat();
+		guardarMatt()
 		if(sw==true){
 			mensaje='Eliminado correctamente'
 		}else{
