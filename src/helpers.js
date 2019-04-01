@@ -210,6 +210,7 @@ hbs.registerHelper('crearmat',(identificador,documento)=>{
 	let mensaje;
 	let sw=true;
 	let mat ={
+		idmatricula: identificador+''+documento,
 		identificador: identificador,
 		documento: documento
 	};
@@ -823,3 +824,18 @@ function dynamicSort(property) {
         }        
     }
 }
+
+hbs.registerHelper('eliminarrr',(identificador,documento)=>{
+listarMatt()
+let mensaje;
+let idmatricula=identificador+''+documento;
+let nuevo=listaMatriculas.filter(mat=>mat.idmatricula!=idmatricula)
+	if(nuevo.length==listaMatriculas.length){
+		console.log('No se encontro la matricula');
+	}else{
+		listaMatriculas=nuevo
+		guardarMat()
+		mensaje='pase por eliminarrr'
+	}
+		return mensaje;
+})
