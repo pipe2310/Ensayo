@@ -39,6 +39,15 @@ const listar = ()=>{
 		listaCursos=[];
 	}
 }
+
+const listarr = ()=>{
+	try{
+	listaCursos= require('../listado.json');//dos formas de llamar
+	//listaCursos= JSON.parse(fs.readFileSync('listado.json'));// de manera asincronica es mejor utilizar este
+	}catch(error){
+		listaCursos=[];
+	}
+}
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////LISTAR LOS ASPIRANTES//////////////////////////////////////////////////////////////
@@ -46,6 +55,15 @@ const listarAsp=()=>{
 	try{
 	//listaAspirantes= require('../listado2.json');//dos formas de llamar
 	listaAspirantes= JSON.parse(fs.readFileSync('listado2.json'));// de manera asincronica es mejor utilizar este
+	}catch(error){
+		listaAspirantes=[];
+	}
+}
+
+const listarAspp=()=>{
+	try{
+	listaAspirantes= require('../listado2.json');//dos formas de llamar
+	//listaAspirantes= JSON.parse(fs.readFileSync('listado2.json'));// de manera asincronica es mejor utilizar este
 	}catch(error){
 		listaAspirantes=[];
 	}
@@ -557,9 +575,9 @@ i=i+1;
 hbs.registerHelper('mostrarmatcursos3',(identificador,documento)=>{
 let string ;
 var out = '<div class="accordion" id="accordionExample"> <div class="row">';
-listarAsp()
+listarAspp()
 listarMatt()
-listar()
+listarr()
 i=1;
 let sw;
 listaCursos.forEach(cur=>{
