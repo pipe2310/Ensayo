@@ -712,7 +712,7 @@ console.log('Estudiante no existe')
 }
 
 hbs.registerHelper('eliminarr',(identificador,documento)=>{
-listarMat()
+listarMatt()
 let sw=false;
 let sww=false;
 let mensaje;
