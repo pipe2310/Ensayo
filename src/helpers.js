@@ -56,7 +56,7 @@ const listarAsp=()=>{
 const listarMat=()=>{
 	try{
 	//listaMatriculas= require('../listado3.json');//dos formas de llamar
-	listaMatriculas= JSON.parse(fs.readFileSync(listado3.json));// de manera asincronica es mejor utilizar este
+	listaMatriculas= JSON.parse(fs.readFileSync('listado3.json'));// de manera asincronica es mejor utilizar este
 	}catch(error){
 		listaMatriculas=[];
 	}
