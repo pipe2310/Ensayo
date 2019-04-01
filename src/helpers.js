@@ -575,9 +575,9 @@ i=i+1;
 hbs.registerHelper('mostrarmatcursos3',(identificador,documento)=>{
 let string ;
 var out = '<div class="accordion" id="accordionExample"> <div class="row">';
-listarAsp()
-listarMat()
-listar()
+listarAspp()
+listarMatt()
+listarr()
 i=1;
 let sw;
 listaCursos.forEach(cur=>{
