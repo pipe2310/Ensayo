@@ -575,9 +575,9 @@ i=i+1;
 hbs.registerHelper('mostrarmatcursos3',(identificador,documento)=>{
 let string ;
 var out = '<div class="accordion" id="accordionExample"> <div class="row">';
-listarAspp()
-listarMatt()
-listarr()
+listarAsp()
+listarMat()
+listar()
 i=1;
 let sw;
 listaCursos.forEach(cur=>{
@@ -712,7 +712,7 @@ console.log('Estudiante no existe')
 }
 
 hbs.registerHelper('eliminarr',(identificador,documento)=>{
-listarMatt()
+listarMat()
 let sw=false;
 let sww=false;
 let mensaje;
