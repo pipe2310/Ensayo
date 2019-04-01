@@ -3,7 +3,7 @@ const fs = require ('fs');
 listaCursos = [];
 listaAspirantes= [];
 listaMatriculas= [];
-listaMatriculass= [];
+var listaMatriculass;
 let cursos =[ {
 Id: 101,
 Nombre: 'Fundamentos de programacion en java',
@@ -587,6 +587,7 @@ var out = '<div class="accordion" id="accordionExample"> <div class="row">';
 listarAspp()
 listarMatt()
 listarr()
+	listaMatriculass[];
 i=1;
 let sw;
 listaCursos.forEach(cur=>{
@@ -722,6 +723,7 @@ console.log('Estudiante no existe')
 
 hbs.registerHelper('eliminarr',(identificador,documento)=>{
 listarMatt()
+listaMatriculass= [];
 let sw=false;
 let sww=false;
 let mensaje;
@@ -731,25 +733,18 @@ let mensaje;
 			sw=true;
 		}
 	})
-	if(sw==true){
+      if(sw==true){
 	listaMatriculas.forEach(mat=>{
-		if(mat.identificador==identificador && mat.documento!=documento){
-			listaMatriculass.push(mat);
-		}
+		if((mat.identificador==identificador && mat.documento!=documento) || mat.identificador!=identificador)
+			listaMatriculass.push(mat);	
 	})
-		listaMatriculas.forEach(mat=>{
-		if(mat.identificador!=identificador){
-			listaMatriculass.push(mat);
-		}
-	})
-
-		}
+      }
 		console.log('antes de')
 		console.log(listaMatriculas)
-		listaMatriculas=listaMatriculass
+		listaMatriculas=listaMatriculass;
 		console.log('despues de')
 		console.log(listaMatriculas)
-		guardarMatt()
+		guardarMat()
 		if(sw==true){
 			mensaje='Eliminado correctamente'
 		}else{
